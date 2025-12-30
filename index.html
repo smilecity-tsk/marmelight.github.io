@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТЦ Мармелайт | Отчёт по продвижению за III квартал 2025</title>
+    <meta name="description" content="Отчёт о продвижении ТЦ Мармелайт за III квартал 2025. Открыто делимся результатами маркетинговых активностей с арендаторами и партнёрами.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --secondary: #FF8F00;
+            --accent: #FFD000;
+            --dark: #1A1A1A;
+            --light: #FFFFFF;
+            --gray: #F5F5F5;
+            --shadow: 0 15px 35px rgba(0,0,0,0.1);
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ЭСТЕТИЧНЫЙ ОСЕННИЙ ЛИСТОПАД НА ЗАДНЕМ ПЛАНЕ */
+        .leaves-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .leaf {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            animation: fall linear infinite, sway ease-in-out infinite alternate, gentle-wind linear infinite;
+            transform-origin: center center;
+        }
+
+        /* 40 листьев (оставляем как есть — осенняя тематика подходит к III кварталу) */
+        .leaf:nth-child(1)  { left: 2%;   width: 80px; height: 80px; animation-duration: 15s, 4s, 22s; animation-delay: 0s, 0s, 0s; background-image: url('https://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png'); }
+        .leaf:nth-child(2)  { left: 8%;   width: 90px; height: 90px; animation-duration: 17s, 5s, 20s; animation-delay: 2s, 1s, 3s; background-image: url('https://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png'); }
+        .leaf:nth-child(3)  { left: 14%;  width: 70px; height: 70px; animation-duration: 14s, 4.5s, 24s; animation-delay: 4s, 0s, 6s; background-image: url('https://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png'); }
+        .leaf:nth-child(4)  { left: 20%;  width: 100px; height: 100px; animation-duration: 16s, 3.5s, 21s; animation-delay: 1s, 2s, 1s; background-image: url('https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3611.png'); }
+        .leaf:nth-child(5)  { left: 26%;  width: 75px; height: 75px; animation-duration: 18s, 5s, 23s; animation-delay: 6s, 0s, 8s; background-image: url('https://www.rawpixel.com/image/12653531/falling-maple-leaf-png-transparent-background'); }
+        /* ... остальные листья остаются без изменений ... */
+        .leaf:nth-child(40) { left: 90%;  width: 100px; height: 100px; animation-duration: 18s, 3.5s, 25s; animation-delay: 1s, 0s, 1s; background-image: url('https://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png'); }
+
+        @keyframes fall {
+            0% { top: -15%; opacity: 0; transform: rotate(0deg) scale(0.7); }
+            8% { opacity: 0.4; transform: scale(1); }
+            92% { opacity: 0.4; }
+            100% { top: 110%; opacity: 0; transform: rotate(1080deg) scale(1); }
+        }
+
+        @keyframes sway {
+            0% { transform: rotate(-18deg); }
+            100% { transform: rotate(18deg); }
+        }
+
+        @keyframes gentle-wind {
+            0% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(100px) translateY(30px); }
+            50% { transform: translateX(150px) translateY(-20px); }
+            75% { transform: translateX(60px) translateY(50px); }
+            100% { transform: translateX(0) translateY(0); }
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        h1 { color: white; }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(135deg, rgba(255,107,0,0.85), rgba(255,143,0,0.75)), url('image5.png') center/cover no-repeat; /* заменить на реальное фото ТЦ из презентации */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(transparent, var(--light));
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            text-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.8rem;
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 18px 50px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(255,208,0,0.4);
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255,208,0,0.5);
+        }
+
+        section { padding: 120px 0; }
+        .bg-gray { background: var(--gray); }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            font-size: 3.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 100px;
+            height: 5px;
+            background: var(--accent);
+            display: block;
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.4rem;
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            color: #666;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .img-container {
+            width: 100%;
+            padding-bottom: 177.67%; /* примерное соотношение */
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .img-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.78%; /* для вертикальных видео */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 35px;
+        }
+
+        .card h3 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 35px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .stat {
+            padding: 50px 25px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .stat:hover { transform: translateY(-10px); }
+
+        .stat-number {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 140px 0;
+        }
+
+        .cta h2 {
+            font-size: 3.8rem;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .cta p {
+            font-size: 1.6rem;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        footer p:first-child {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 4rem; }
+            .hero p { font-size: 1.5rem; }
+            .section-title { font-size: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: 90vh; min-height: 600px; }
+            .hero h1 { font-size: 3.2rem; }
+            .hero p { font-size: 1.3rem; padding: 0 20px; }
+            section { padding: 80px 0; }
+            .section-title { font-size: 2.6rem; }
+            .cards { gap: 30px; }
+            .card-body { padding: 25px; }
+            .card h3 { font-size: 1.8rem; }
+            .cta { padding: 100px 0; }
+            .cta h2 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Осенний листопад -->
+    <div class="leaves-container">
+        <!-- 40 div.leaf остаются без изменений -->
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+    </div>
+
+    <section class="hero" data-aos="fade-down">
+        <div class="container">
+            <h1>Отчёт по продвижению<br>III квартал 2025</h1>
+            <p>Уважаемые арендаторы и партнёры! Делимся результатами маркетинговых активностей III квартала 2025 года в ТЦ Мармелайт.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Онлайн-конкурс с Мармазавриками</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                1 июля – 10 августа. Гости фотографировались с маскотом и публиковали фото с хэштегом ТЦ.<br>
+            </p>
+
+            <div class="cards">
+                <div class="card" data-aos="fade-up">
+                    <div class="video-container">
+                        <video src="динозавр.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                    <div class="card-body">
+                        <h3>Маскоты в действии</h3>
+                        <p>Мармазаврик работал по средам, привлекая семьи с детьми.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-container">
+                        <img src="вывфв.jpg" alt="Участники и зоны фестиваля">
+                    </div>
+                    <div class="card-body">
+                        <h3>57 фоторабот</h3>
+                        <p>Положительный имиджевый эффект и рост вовлечённости.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="video-container">
+                        <video src="ддд.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                    <div class="card-body">
+                        <h3>+47% участников</h3>
+                        <p>по сравнению с другими онлайн-конкурсами. Отличный показатель интереса к механике</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Стимулирующая акция «Урожай подарков» + Фестиваль «Будь здоров»</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                15 августа – 8 ноября (полуфинал 14 сентября).<br>
+                Призовой фонд: сертификаты 10–20 тыс. ₽ + денежные призы 30 и 50 тыс. ₽.<br>
+                Полуфинал совмещён с первым фестивалем ЗОЖ в Северске.
+            </p>
+
+            <div class="stats">
+                <div class="stat" data-aos="zoom-in">
+                    <div class="stat-number">+12%</div>
+                    <p>трафик 14 сентября к предыдущему воскресенью</p>
+                </div>
+                <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number">780</div>
+                    <p>купонов участвовало в розыгрыше</p>
+                </div>
+                <div class="stat" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-number">+22%</div>
+                    <p>ТО арендаторов за месяц</p>
+                </div>
+            </div>
+
+            <div class="cards">
+
+                <div class="card" data-aos="fade-left">
+                    <div class="video-container">
+                        <video src="ууц.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                    <div class="card-body">
+                        <h3>Рекламная кампания</h3>
+                        <p>Баннеры и плакаты в ТЦ, аудиореклама, email-рассылка — всё запущено за 2 недели до старта, чтобы максимально привлечь внимание.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up">
+                    <div class="video-container">
+                        <video src="финал.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                    <div class="card-body">
+                        <h3>Рост продаж у партнёров</h3>
+                        <p>Покупатели активно участвовали в розыгрыше. На 29% больше посетителей + 40%-50% прирост у фудкорта.</p>
+                    </div>
+                </div>
+                                <div class="card" data-aos="fade-right">
+                    <div class="video-container">
+                        <video src="оо.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                    <div class="card-body">
+                        <h3>Фестиваль «Будь здоров»</h3>
+                        <p>Чек-апы, консультации, мастер-классы от арендаторов и городских организаций.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Праздник мыльных пузырей<br> и <br> онлайн продвижение</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Активная работа в Instagram и VK. Рост охвата и подписчиков.
+            </p>
+
+            <div class="stats">
+                <div class="stat" data-aos="zoom-in">
+                    <div class="stat-number">+49%</div>
+                    <p>средний охват в Instagram</p>
+                </div>
+                <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number">+65%</div>
+                    <p>средний охват во VK</p>
+                </div>
+                <div class="stat" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-number">+100</div>
+                    <p>новых подписчиков во VK</p>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="card" data-aos="fade-up">
+                    <div class="video-container">
+                        <video src="выы.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                    <div class="card-body">
+                        <h3>Праздник мыльных пузырей</h3>
+                        <p>Провели масштабное летнее семейное мероприятие. Такие мероприятия притягивают много внимания к ТЦ - то есть к каждому из вас !</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-container">
+                        <video src="оо.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                    <div class="card-body">
+                        <h3>Контент с креаторами</h3>
+                        <p>Что «норм», а что «стрем» для наших гостей разбирались в Мармелайт !<br>Ролики с блогерами набирают
+в 3,6 раза больше просмотров,
+чем обычные посты.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 data-aos="fade-up">Вместе мы можем больше!</h2>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Приглашаем арендаторов к совместным активностям, партнёрским проектам и новым идеям.<br>
+                Давайте развивать ТЦ Мармелайт вместе!
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>ТЦ Мармелайт — ваш надёжный партнёр</p>
+            <p>© 2025 ТЦ Мармелайт. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-quart',
+            once: true
+        });
+    </script>
+</body>
+
+</html>
